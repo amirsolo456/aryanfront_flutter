@@ -12,6 +12,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Aryan Front';
 
   @override
+  String get profileTitle => 'Profile';
+
+  @override
   String get loginPageTitle => 'Login Page';
 
   @override
@@ -19,4 +22,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get password => 'Password';
+
+  @override
+  String get personList => 'Person List';
+
+  @override
+  String get userInfo => 'User Info';
+
+  @override
+  String get userPasswordChange => 'User Password Change';
+
+  @override
+  String get userWallet => 'User Wallet';
+
+  @override
+  String get userSettings => 'User Settings';
+
+  @override
+  String get userOtherAccounts => 'Other Accounts';
+
+  @override
+  String get usersTitle => 'Account Title';
+
+  @override
+  String get usersDevices => 'My Devices';
+
+  @override
+  String get usersSignOut => 'Sign Out From Account';
 }

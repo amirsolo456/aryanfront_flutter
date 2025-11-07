@@ -104,6 +104,12 @@ abstract class AppLocalizations {
   /// **'Aryan Front'**
   String get appTitle;
 
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
   /// No description provided for @loginPageTitle.
   ///
   /// In en, this message translates to:
@@ -121,6 +127,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password'**
   String get password;
+
+  /// No description provided for @personList.
+  ///
+  /// In en, this message translates to:
+  /// **'Person List'**
+  String get personList;
+
+  /// No description provided for @userInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'User Info'**
+  String get userInfo;
+
+  /// No description provided for @userPasswordChange.
+  ///
+  /// In en, this message translates to:
+  /// **'User Password Change'**
+  String get userPasswordChange;
+
+  /// No description provided for @userWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'User Wallet'**
+  String get userWallet;
+
+  /// No description provided for @userSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'User Settings'**
+  String get userSettings;
+
+  /// No description provided for @userOtherAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Other Accounts'**
+  String get userOtherAccounts;
+
+  /// No description provided for @usersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Title'**
+  String get usersTitle;
+
+  /// No description provided for @usersDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'My Devices'**
+  String get usersDevices;
+
+  /// No description provided for @usersSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out From Account'**
+  String get usersSignOut;
 }
 
 class _AppLocalizationsDelegate

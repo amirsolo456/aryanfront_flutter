@@ -1,6 +1,17 @@
 {
   "appTitle": "آریان فرانت",
+  "profileTitle": "حساب کاربری",
   "loginPageTitle": "صفحه ورود",
   "phoneNumber": "شماره تلفن",
-  "password": "رمز عبور"
+  "password": "رمز عبور",
+  "personList": "اشخاص شرکت ها",
+
+  "userInfo": "مشخصات کاربری",
+  "userPasswordChange": "تغییر رمز عبور",
+  "userWallet": "کیف پول",
+  "userSettings": "تنظیمات حساب",
+  "userOtherAccounts": "حساب های دیگر",
+  "usersTitle": "عنوان حساب",
+  "usersDevices": "دستگاه های من",
+  "usersSignOut": "خروج از حساب کاربری"
 }

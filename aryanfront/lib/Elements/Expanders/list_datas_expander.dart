@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../Classes/Models/Data/Com/Person/dto.dart';
+import '../../Models/Data/Com/Person/dto.dart';
 
-class PersonExpander  extends StatefulWidget {
+class PersonExpander extends StatefulWidget {
   final ResponseData person;
 
   const PersonExpander({super.key, required this.person});
@@ -25,11 +25,7 @@ class _PersonExpanderState extends State<PersonExpander> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          )
+          BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
         ],
       ),
       child: Column(
@@ -40,14 +36,20 @@ class _PersonExpanderState extends State<PersonExpander> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             trailing: AnimatedRotation(
+              filterQuality: FilterQuality.high,
               turns: _expanded ? 0.5 : 0.0,
-              duration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 150),
               child: Icon(Icons.expand_more),
             ),
+            style: ListTileStyle.drawer,
             onTap: () => setState(() => _expanded = !_expanded),
+            splashColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            // highlightColor: Colors.transparent,
           ),
           AnimatedCrossFade(
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 200),
+
             crossFadeState: _expanded
                 ? CrossFadeState.showSecond
                 : CrossFadeState.showFirst,
@@ -64,12 +66,11 @@ class _PersonExpanderState extends State<PersonExpander> {
                   if (person.birthDate != null)
                     _infoRow("تاریخ تولد", person.birthDate!),
                   if (person.isForeign != null)
-                    _infoRow("اتباع خارجی",
-                        person.isForeign! ? "بله" : "خیر"),
+                    _infoRow("اتباع خارجی", person.isForeign! ? "بله" : "خیر"),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -83,7 +84,9 @@ class _PersonExpanderState extends State<PersonExpander> {
           Text(
             "$label: ",
             style: const TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.black54),
+              fontWeight: FontWeight.bold,
+              color: Colors.black54,
+            ),
           ),
           Expanded(
             child: Text(value, style: const TextStyle(color: Colors.black87)),

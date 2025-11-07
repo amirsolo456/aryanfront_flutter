@@ -12,6 +12,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get appTitle => 'آریان فرانت';
 
   @override
+  String get profileTitle => 'حساب کاربری';
+
+  @override
   String get loginPageTitle => 'صفحه ورود';
 
   @override
@@ -19,4 +22,31 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get password => 'رمز عبور';
+
+  @override
+  String get personList => 'اشخاص شرکت ها';
+
+  @override
+  String get userInfo => 'مشخصات کاربری';
+
+  @override
+  String get userPasswordChange => 'تغییر رمز عبور';
+
+  @override
+  String get userWallet => 'کیف پول';
+
+  @override
+  String get userSettings => 'تنظیمات حساب';
+
+  @override
+  String get userOtherAccounts => 'حساب های دیگر';
+
+  @override
+  String get usersTitle => 'عنوان حساب';
+
+  @override
+  String get usersDevices => 'دستگاه های من';
+
+  @override
+  String get usersSignOut => 'خروج از حساب کاربری';
 }

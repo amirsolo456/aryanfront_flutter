@@ -1,15 +1,40 @@
-import 'package:aryanfront/Pages/List/Com/Person/person_list_page.dart';
-import 'package:aryanfront/Pages/List/ListBlocs/Com/PersonBloc/person_list_bloc.dart';
+import 'package:aryanfront/Pages/Home/Blocs/ProfileBloc/profile_bloc.dart';
+import 'package:aryanfront/Pages/List/Blocs/Com/PersonBloc/person_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:http/http.dart' as http;
 
+import 'Models/Base/base_request.dart';
+import 'Pages/Main/main_layout.dart';
+import 'Services/api_client.dart';
+import 'Services/Interfaces/apiclient_middleware_service.dart';
+import 'Services/storage_service.dart' as istorage_service;
 import 'l10n/app_localizations.dart';
 
 void main() {
+  final apiSettings = ApiSettings(
+    baseUrl: '',
+    loginUrl: 'https://example.com/login',
+    appDefaults: Defaults(),
+  );
+
+  final apiClient = ApiClient(
+    storage: istorage_service.Storage(),
+    appSettings: apiSettings,
+    httpClient: http.Client(),
+  );
+
+  final apiMiddleware = ApiClientMiddlewareService(apiClient: apiClient);
+
   runApp(
     MultiBlocProvider(
-      providers: [BlocProvider(create: (con) => PersonListBloc())],
+      providers: [
+        BlocProvider(create: (context) => ProfileBloc()),
+        BlocProvider(
+          create: (context) => PersonListBloc(apiMiddleware: apiMiddleware),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
@@ -48,6 +73,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', 'US'), Locale('fa', 'IR')],
       theme: ThemeData(
         fontFamily: 'IRanSans',
+        scaffoldBackgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
       home: MyHomePage(toggleLanguage: toggleLanguage),
@@ -57,6 +83,7 @@ class _MyAppState extends State<MyApp> {
 
 class MyHomePage extends StatefulWidget {
   final VoidCallback toggleLanguage;
+
   const MyHomePage({super.key, required this.toggleLanguage});
 
   @override
@@ -85,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: MyStatefulWidget(),
+
     );
   }
 }
@@ -159,7 +187,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   void setCustomState() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const PersonListPage()),
+      MaterialPageRoute(builder: (context) => const MainLayoutPage()),
     );
   }
 }

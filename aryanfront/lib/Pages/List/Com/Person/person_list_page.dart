@@ -1,53 +1,63 @@
 import 'package:aryanfront/Elements/Expanders/list_datas_expander.dart'
     show PersonExpander;
-import 'package:aryanfront/Pages/List/ListBlocs/Com/PersonBloc/person_list_bloc.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:aryanfront/Pages/List/Blocs/Com/PersonBloc/person_list_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart' show BlocProvider, BlocBuilder;
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../Elements/Buttons/absoluted_button.dart';
+import '../../../../Elements/Components/list_appbar.dart';
 
 class PersonListPage extends StatefulWidget {
-  const PersonListPage({super.key});
+  final bool refreshData;
+
+  const PersonListPage({super.key, required this.refreshData});
 
   @override
-  State<PersonListPage> createState() => _PersonListPage();
+  State<PersonListPage> createState() => _PersonListPageState();
 }
 
-class _PersonListPage extends State<PersonListPage> {
+final Widget addIcon = Image.asset(
+  'assets/images/add.png',
+  width: 44,
+  height: 44,
+);
+
+class _PersonListPageState extends State<PersonListPage> {
   @override
   void initState() {
-    BlocProvider.of<PersonListBloc>(context).add(LoadDataEvent());
     super.initState();
+    if (widget.refreshData) {
+      context.read<PersonListBloc>().add(PersonListInitialEvent());
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Aryan Front')),
-      body: BlocBuilder<PersonListBloc, PersonlistState>(
-        builder: (context, state) {
-          if (state is LoadDataLoading) {
-            return Center(
-              child: CupertinoActivityIndicator(
-                color: Colors.black,
-                radius: 20,
+    return BlocBuilder<PersonListBloc, PersonListState>(
+      builder: (context, state) {
+        if (state is PersonListInitialState) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is LoadDataSource) {
+          return Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                child: ListView.builder(
+                  itemCount: state.data.length,
+                  itemBuilder: (context, index) {
+                    return PersonExpander(person: state.data[index]);
+                  },
+                ),
               ),
-            );
-          } else if (state is LoadDataSuccess) {
-            return Center(child: Text('Success'));
-          } else if (state is LoadDataError) {
-            return Text('Error');
-          } else if (state is LoadDataSendListDatas) {
-            return ListView.builder(
-              itemCount: state.data.length,
-              itemBuilder: (context, index) {
-                return PersonExpander(person: state.data[index]);
-              },
-            );
-          } else {
-            return SizedBox();
-          }
-        },
-      ),
+              AbsoultNewButton(),
+            ],
+          );
+        } else {
+          return const SizedBox();
+        }
+      },
     );
   }
 }

@@ -1,6 +1,17 @@
 {
   "appTitle": "Aryan Front",
+  "profileTitle": "Profile",
   "loginPageTitle": "Login Page",
   "phoneNumber": "Phone Number",
-  "password": "Password"
+  "password": "Password",
+  "personList": "Person List",
+
+  "userInfo": "User Info",
+  "userPasswordChange": "User Password Change",
+  "userWallet": "User Wallet",
+  "userSettings": "User Settings",
+  "userOtherAccounts": "Other Accounts",
+  "usersTitle": "Account Title",
+  "usersDevices": "My Devices",
+  "usersSignOut": "Sign Out From Account"
 }
