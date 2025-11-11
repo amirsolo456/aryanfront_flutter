@@ -3,11 +3,13 @@ import 'package:aryanfront/Models/Data/Com/Person/dto.dart'
 import 'package:aryanfront/Services/Interfaces/apiclient_middleware_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import '../../../../../Services/api_client.dart';
+
+import '../../../../../Services/api_client_service.dart';
+
 part 'person_list_event.dart';
 part 'person_list_state.dart';
 
-class PersonListBloc extends Bloc<PersonListEvent,PersonListState> {
+class PersonListBloc extends Bloc<PersonListEvent, PersonListState> {
   final ApiClientMiddlewareService apiMiddleware;
 
   PersonListBloc({required this.apiMiddleware})
@@ -29,9 +31,7 @@ class PersonListBloc extends Bloc<PersonListEvent,PersonListState> {
           }
         } catch (e) {
           emit(LoadDataError());
-        } finally {
-
-        }
+        } finally {}
       } else if (event is FilterDataEvent) {
         try {
           emit(FilterDataLoading());

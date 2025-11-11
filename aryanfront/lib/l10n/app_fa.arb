@@ -4,8 +4,11 @@
   "loginPageTitle": "صفحه ورود",
   "phoneNumber": "شماره تلفن",
   "password": "رمز عبور",
+  "passwordForgot": "فراموشی رمز عبور",
+  "passwordRecovery": "تکرار رمز عبور",
+  "passwordValidationNullMsg": "رمز عبور وارد شده درست نمی باشد.",
+  "passwordValidationMsg": "رمز عبور خود را وارد کنید.",
   "personList": "اشخاص شرکت ها",
-
   "userInfo": "مشخصات کاربری",
   "userPasswordChange": "تغییر رمز عبور",
   "userWallet": "کیف پول",
@@ -13,5 +16,26 @@
   "userOtherAccounts": "حساب های دیگر",
   "usersTitle": "عنوان حساب",
   "usersDevices": "دستگاه های من",
-  "usersSignOut": "خروج از حساب کاربری"
+  "usersSignOut": "خروج از حساب کاربری",
+   "loginButtonText": "ورود",
+  "loginButtonLoadingText": "لطفا صبر کنید",
+  "languagesDisplayName": "",
+  "@languagesDisplayName": {
+    "description": "فارسی",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "فارسی"
+      }
+    }
+  },
+  "@languagesDisplayName": {
+    "description": "English",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  }
 }

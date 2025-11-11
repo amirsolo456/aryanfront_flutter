@@ -27,6 +27,11 @@ dependencies:
   google_fonts: ^6.3.2
   persistent_bottom_nav_bar: ^6.2.1
   firebase_core: ^4.2.1
+  firebase_messaging: ^16.0.4
+  flutter_otp_text_field: ^1.5.1+1
+  get_it: ^9.0.5
+  url_launcher: ^6.3.0
+
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +49,22 @@ dependency_overrides:
       url: https://pub.flutter-io.cn
 
 flutter:
+  fonts:
+    - family: IRANSansX
+      fonts:
+        - asset: assets/fonts/IRANSansX-Regular.ttf
+        - asset: assets/fonts/IRANSansX-Bold.ttf
+          weight: 700
+
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-Semibold.ttf
+          weight: 600
+
+    - family: Yekan
+      fonts:
+        - asset: assets/fonts/Yekan.ttf
   assets:
     - assets/images/account.png
     - assets/images/activeaccount.png
@@ -72,6 +93,11 @@ flutter:
     - assets/images/pagination_right.png
     - assets/images/pagination_left.png
     - assets/images/add.png
+    - assets/images/aryan_app.png
+    - assets/images/lang_icon.png
+    - assets/images/eyes_close.png
+    - assets/images/eyes_open.png
+
   generate: true
   uses-material-design: true
 

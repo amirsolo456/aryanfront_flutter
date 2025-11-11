@@ -128,6 +128,30 @@ abstract class AppLocalizations {
   /// **'Password'**
   String get password;
 
+  /// No description provided for @passwordValidationNullMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get passwordValidationNullMsg;
+
+  /// No description provided for @passwordValidationMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is NotValid'**
+  String get passwordValidationMsg;
+
+  /// No description provided for @passwordForgot.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Forgot'**
+  String get passwordForgot;
+
+  /// No description provided for @passwordRecovery.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat Password'**
+  String get passwordRecovery;
+
   /// No description provided for @personList.
   ///
   /// In en, this message translates to:
@@ -181,6 +205,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign Out From Account'**
   String get usersSignOut;
+
+  /// No description provided for @loginButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get loginButtonText;
+
+  /// No description provided for @loginButtonLoadingText.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Waite ...'**
+  String get loginButtonLoadingText;
+
+  /// English
+  ///
+  /// In en, this message translates to:
+  /// **''**
+  String languagesDisplayName(String userName);
 }
 
 class _AppLocalizationsDelegate

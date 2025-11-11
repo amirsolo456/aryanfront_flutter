@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Buttons/dynamic_button.dart';
 
 class ListPagination extends StatefulWidget {
   const ListPagination({super.key});
@@ -27,8 +26,8 @@ class _ListPaginationState extends State<ListPagination> {
         children: [
           IconButton(
             onPressed: onPressedd,
-            icon:rightArrow,
-            highlightColor: Colors.orange.withOpacity(0),
+            icon: rightArrow,
+            highlightColor: Colors.orange.withAlpha(0),
           ),
           // DynamicButton(
           //   onPressed: onPressedd,
@@ -44,8 +43,8 @@ class _ListPaginationState extends State<ListPagination> {
           SizedBox(width: 20),
           IconButton(
             onPressed: onPressedd,
-            icon:leftArrow,
-            highlightColor: Colors.orange.withOpacity(0),
+            icon: leftArrow,
+            highlightColor: Colors.orange.withAlpha(0),
           ),
           // DynamicButton(
           //   onPressed: onPressedd,

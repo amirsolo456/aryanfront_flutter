@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../Headers/list_head_actionbar.dart';
 import 'list_pagination.dart';
+
 final Widget futuresIcon = Image.asset(
   'assets/images/futures.png',
   width: 24,
@@ -20,12 +20,20 @@ AppBar buildPersonListAppBar(BuildContext context) {
     title: Text(
       textAlign: TextAlign.start,
       AppLocalizations.of(context)!.personList,
-      style: TextStyle(color: Colors.black,),
+      style: TextStyle(color: Colors.black),
     ),
     centerTitle: true,
     actions: [
-      IconButton(onPressed: () {}, icon: futuresIcon,   highlightColor: Colors.black.withOpacity(0.05),),
-      IconButton(onPressed: () {}, icon: moreIcon,   highlightColor: Colors.black.withOpacity(0.05),),
+      IconButton(
+        onPressed: () {},
+        icon: futuresIcon,
+        highlightColor: Colors.black.withAlpha(0),
+      ),
+      IconButton(
+        onPressed: () {},
+        icon: moreIcon,
+        highlightColor: Colors.black.withAlpha(0),
+      ),
     ],
     backgroundColor: Colors.white,
     elevation: 0,
@@ -34,13 +42,10 @@ AppBar buildPersonListAppBar(BuildContext context) {
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(50),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            ListPagination(),
-            ButtonPanel(),
-          ],
+          children: const [ListPagination(), ButtonPanel()],
         ),
       ),
     ),

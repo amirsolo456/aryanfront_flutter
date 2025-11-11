@@ -1,14 +1,15 @@
 import 'dart:convert';
 
 import 'package:aryanfront/Models/Data/Auth/User/dto.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+
 import 'Interfaces/istorage_service.dart';
 
-class Storage implements IStorage {
-  static final Storage _instance = Storage._internal();
-  factory Storage() => _instance;
-  Storage._internal();
+class StorageService implements IStorageService {
+  static final StorageService _instance = StorageService._internal();
+  factory StorageService() => _instance;
+  StorageService._internal();
 
   Database? _db;
 
@@ -39,17 +40,19 @@ class Storage implements IStorage {
 
   Future<void> _setValue(String key, String value) async {
     final db = await _database;
-    await db.insert(
-      'user_data',
-      {'key': key, 'value': value},
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
+    await db.insert('user_data', {
+      'key': key,
+      'value': value,
+    }, conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<String?> _getValue(String key) async {
     final db = await _database;
-    final result =
-    await db.query('user_data', where: 'key = ?', whereArgs: [key]);
+    final result = await db.query(
+      'user_data',
+      where: 'key = ?',
+      whereArgs: [key],
+    );
     if (result.isNotEmpty) return result.first['value'] as String;
     return null;
   }
@@ -86,6 +89,11 @@ class Storage implements IStorage {
   @override
   Future<String?> getDeviceToken() {
     // TODO: implement getDeviceToken
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setDeviceToken(String token) {
     throw UnimplementedError();
   }
 }

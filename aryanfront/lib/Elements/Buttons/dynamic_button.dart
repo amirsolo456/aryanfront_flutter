@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DynamicButton extends StatelessWidget {
+class CustomDynamicButton extends StatelessWidget {
   final Widget icon;
   final VoidCallback onPressed;
   final Color backgroundColor;
@@ -9,7 +9,7 @@ class DynamicButton extends StatelessWidget {
   final double elevation;
   final bool useDefaultAnimation;
 
-  const DynamicButton({
+  const CustomDynamicButton({
     super.key,
     required this.icon,
     required this.onPressed,
@@ -43,7 +43,7 @@ class DynamicButton extends StatelessWidget {
       return IconButton(
         onPressed: onPressed,
         icon: icon,
-        highlightColor: Colors.black.withOpacity(0.0),
+        highlightColor: Colors.black.withAlpha(0),
       );
     }
   }

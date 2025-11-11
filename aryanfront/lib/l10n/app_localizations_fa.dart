@@ -24,6 +24,18 @@ class AppLocalizationsFa extends AppLocalizations {
   String get password => 'رمز عبور';
 
   @override
+  String get passwordValidationNullMsg => 'رمز عبور وارد شده درست نمی باشد.';
+
+  @override
+  String get passwordValidationMsg => 'رمز عبور خود را وارد کنید.';
+
+  @override
+  String get passwordForgot => 'فراموشی رمز عبور';
+
+  @override
+  String get passwordRecovery => 'تکرار رمز عبور';
+
+  @override
   String get personList => 'اشخاص شرکت ها';
 
   @override
@@ -49,4 +61,15 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get usersSignOut => 'خروج از حساب کاربری';
+
+  @override
+  String get loginButtonText => 'ورود';
+
+  @override
+  String get loginButtonLoadingText => 'لطفا صبر کنید';
+
+  @override
+  String languagesDisplayName(String userName) {
+    return '';
+  }
 }

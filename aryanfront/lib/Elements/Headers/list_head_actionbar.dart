@@ -38,7 +38,7 @@ class ButtonPanel extends StatelessWidget {
         direction: Axis.horizontal,
         children: [
           RotatingSortButton(),
-          DynamicButton(
+          CustomDynamicButton(
             icon: filterNoneIcon,
             backgroundColor: Color(0xFFECECEC),
             elevation: 0,
@@ -46,7 +46,7 @@ class ButtonPanel extends StatelessWidget {
             borderRadius: 6,
             onPressed: OnFilterPressed,
           ),
-          DynamicButton(
+          CustomDynamicButton(
             icon: refreshIcon,
             backgroundColor: Color(0xFFECECEC),
             elevation: 0,

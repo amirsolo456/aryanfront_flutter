@@ -1,12 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:aryanfront/Pages/Home/profile.dart';
 import 'package:aryanfront/Pages/List/Com/Person/person_list_page.dart';
-
+import 'package:flutter/material.dart';
 
 import '../../Elements/Components/list_appbar.dart';
-import '../../Elements/Components/list_pagination.dart';
-
-import '../../Elements/Headers/list_head_actionbar.dart';
 import '../../l10n/app_localizations.dart';
 
 class MainLayoutPage extends StatefulWidget {
@@ -18,8 +14,39 @@ class MainLayoutPage extends StatefulWidget {
 
 class _MainLayoutPageState extends State<MainLayoutPage> {
   int _selectedIndex = 0;
-
   final Map<int, Widget> _pageCache = {};
+
+  static double size = 40;
+  static double topPadding = 10;
+
+  Widget paddedIcon(String assetPath) {
+    return Padding(
+      padding: EdgeInsets.only(top: topPadding),
+      child: Image.asset(assetPath, width: size, height: size),
+    );
+  }
+
+  // آیکون‌ها
+  late final Widget accountIcon = paddedIcon('assets/images/account.png');
+  late final Widget activeAccountIcon = paddedIcon(
+    'assets/images/activeaccount.png',
+  );
+
+  late final Widget defaultIcon = paddedIcon('assets/images/defaults.png');
+  late final Widget activeDefaultIcon = paddedIcon(
+    'assets/images/activedefaults.png',
+  );
+
+  late final Widget menuIcon = paddedIcon('assets/images/menu.png');
+  late final Widget activeMenuIcon = paddedIcon('assets/images/activemenu.png');
+
+  late final Widget openedIcon = paddedIcon('assets/images/opened.png');
+  late final Widget activeOpenedIcon = paddedIcon(
+    'assets/images/activeopened.png',
+  );
+
+  late final Widget newIcon = paddedIcon('assets/images/new.png');
+  late final Widget activeNewIcon = paddedIcon('assets/images/activenew.png');
 
   Widget _getPage(int index) {
     if (_pageCache.containsKey(index)) {
@@ -54,16 +81,18 @@ class _MainLayoutPageState extends State<MainLayoutPage> {
           primary: true,
           title: Text(
             AppLocalizations.of(context)!.profileTitle,
-            style: TextStyle(color: Color(0xFF585858)),
+            style: const TextStyle(color: Color(0xFF585858)),
           ),
           centerTitle: false,
         );
       default:
-        return AppBar(title: Text("صفحه ${index + 1}"),
+        return AppBar(
+          title: Text("صفحه ${index + 1}"),
           elevation: 0.0,
           primary: true,
           backgroundColor: Colors.white,
-          scrolledUnderElevation: 0.0,);
+          scrolledUnderElevation: 0.0,
+        );
     }
   }
 
@@ -72,25 +101,6 @@ class _MainLayoutPageState extends State<MainLayoutPage> {
       _selectedIndex = index;
     });
   }
-
-  final Widget accountIcon = Image.asset('assets/images/account.png');
-  final Widget activeAccountIcon = Image.asset(
-    'assets/images/activeaccount.png',
-  );
-
-  final Widget defaultIcon = Image.asset('assets/images/defaults.png');
-  final Widget activeDefaultIcon = Image.asset(
-    'assets/images/activedefaults.png',
-  );
-
-  final Widget menuIcon = Image.asset('assets/images/menu.png');
-  final Widget activeMenuIcon = Image.asset('assets/images/activemenu.png');
-
-  final Widget openedIcon = Image.asset('assets/images/opened.png');
-  final Widget activeOpenedIcon = Image.asset('assets/images/activeopened.png');
-
-  final Widget newIcon = Image.asset('assets/images/new.png');
-  final Widget activeNewIcon = Image.asset('assets/images/activenew.png');
 
   @override
   Widget build(BuildContext context) {
@@ -124,13 +134,11 @@ class _MainLayoutPageState extends State<MainLayoutPage> {
           child: BottomNavigationBar(
             backgroundColor: Colors.white,
             currentIndex: _selectedIndex,
-            useLegacyColorScheme: true,
-            selectedItemColor: Colors.black,
+            enableFeedback: true,
             type: BottomNavigationBarType.fixed,
-            iconSize: 20,
+            landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+            iconSize: 50,
             elevation: 0,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
             onTap: _onItemTapped,
             items: [
               BottomNavigationBarItem(

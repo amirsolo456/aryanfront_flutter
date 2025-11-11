@@ -10,18 +10,23 @@ class AppColors {
 */
 
 class FontColors {
-
   static const Color _primary = Color(0xFF585858);
   static const Color _secondary = Color(0xFF767676);
   static const Color _dark = Color(0xFF050505);
+  static const Color _aryanTextBackgroundColor = Color(0xFFF4F4F4);
+  static const Color _aryanTextBorderColor = Color(0xFFCECECE);
 
   static Color get primary => _primary;
   static Color get listTitlePrimary => _primary;
   static Color get listContentTitlePrimary => _primary;
-  static Color get aryanText => _primary;
+
+  static Color get aryanText => _aryanTextBackgroundColor;
+  static Color get aryanTextBackgroundColor => _aryanTextBackgroundColor;
+
+  static Color get aryanTextBorderColor => _aryanTextBorderColor;
 
   static Color get secondary => _secondary;
   static Color get listContentSecondary => _secondary;
 
-  static Color get  darkPrimary => _dark;
+  static Color get darkPrimary => _dark;
 }

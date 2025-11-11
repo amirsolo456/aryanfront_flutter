@@ -1,6 +1,6 @@
 # aryanfront
 
-A new Flutter project.
+aryan front Project On Cross Platforms  (android ios mac windows)
 
 ## Getting Started
 

@@ -24,6 +24,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
+  String get passwordValidationNullMsg => 'Password is required';
+
+  @override
+  String get passwordValidationMsg => 'Password is NotValid';
+
+  @override
+  String get passwordForgot => 'Password Forgot';
+
+  @override
+  String get passwordRecovery => 'Repeat Password';
+
+  @override
   String get personList => 'Person List';
 
   @override
@@ -49,4 +61,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get usersSignOut => 'Sign Out From Account';
+
+  @override
+  String get loginButtonText => 'Login';
+
+  @override
+  String get loginButtonLoadingText => 'Please Waite ...';
+
+  @override
+  String languagesDisplayName(String userName) {
+    return '';
+  }
 }

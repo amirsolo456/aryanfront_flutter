@@ -4,8 +4,11 @@
   "loginPageTitle": "Login Page",
   "phoneNumber": "Phone Number",
   "password": "Password",
+  "passwordValidationNullMsg": "Password is required",
+  "passwordValidationMsg": "Password is NotValid",
+  "passwordForgot": "Password Forgot",
+  "passwordRecovery": "Repeat Password",
   "personList": "Person List",
-
   "userInfo": "User Info",
   "userPasswordChange": "User Password Change",
   "userWallet": "User Wallet",
@@ -13,5 +16,26 @@
   "userOtherAccounts": "Other Accounts",
   "usersTitle": "Account Title",
   "usersDevices": "My Devices",
-  "usersSignOut": "Sign Out From Account"
+  "usersSignOut": "Sign Out From Account",
+  "loginButtonText": "Login",
+  "loginButtonLoadingText": "Please Waite ...",
+  "languagesDisplayName": "",
+  "@languagesDisplayName": {
+    "description": "فارسی",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "فارسی"
+      }
+    }
+  },
+  "@languagesDisplayName": {
+    "description": "English",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  }
 }

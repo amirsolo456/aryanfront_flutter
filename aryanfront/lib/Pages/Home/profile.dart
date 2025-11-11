@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import '../../l10n/app_localizations.dart';
 import 'Blocs/ProfileBloc/profile_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'login.dart';
 
 class ProfilePage extends StatefulWidget {
   final bool refreshData;
@@ -121,6 +123,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   horizontalTitleGap: 10,
                   leading: userSignOut,
+                  onTap: onSignoutPressed,
                 ),
               ],
             ),
@@ -133,6 +136,13 @@ class _ProfilePageState extends State<ProfilePage> {
           return SizedBox();
         }
       },
+    );
+  }
+
+  void onSignoutPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
     );
   }
 }
